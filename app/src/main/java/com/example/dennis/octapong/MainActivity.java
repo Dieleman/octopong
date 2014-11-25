@@ -8,6 +8,7 @@ import android.view.MenuItem;
 
 
 public class MainActivity extends ActionBarActivity {
+    private MainThread thread;
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
@@ -15,6 +16,10 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        thread = new MainThread();
+        thread.setRunning(true);
+        thread.start();
+
         Log.d(TAG,"Activity created");
     }
 
